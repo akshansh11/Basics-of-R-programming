@@ -1,0 +1,21 @@
+> #Code to compute the quadratic equation
+> #Equation of the given form ax^2+bx+c
+> #Firstly we have to define the variables a, b ,and c
+> a<-1
+> b<-1
+> c<--2
+> #Now Lets compute the solution
+> (-b+sqrt(b^2-4*a*c)/2*a)
+[1] 0.5
+> (-b-sqrt(b^2-4*a*c)/2*a)
+[1] -2.5
+> #What is the sum of the first 1000 positive integers?
+> 
+> n<-1000
+> n*(n+1)/2
+[1] 500500
+> 
+> #Nested Function calls 1
+> # Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
+> sqrt(log10(100))
+[1] 1.414214
