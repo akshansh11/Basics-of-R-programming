@@ -1,0 +1,12 @@
+> #UNDERSTANDING VECTOR ARITHMETIC
+> #In R, vector arithmetic operation ocuurs elementwise.
+> #Heights in inches
+> heigh<-c(69, 63, 87, 79, 67, 68, 84, 75)
+> #converting height in inches to cm
+> heigh*2.54
+[1] 175.26 160.02 220.98 200.66 170.18 172.72 213.36 190.50
+> #Let the average hight is 69 inches
+> heigh-69
+[1]  0 -6 18 10 -2 -1 15  6
+> #The above results show how much bigger or smaller they are than the average value
+> #If we have two vectors of same length, they get operated entry by entry
