@@ -1,0 +1,47 @@
+ #UNDERSTANDING SORTING OPERATIONS
+> #Function 'sort' sort the vectors in increasing order. 
+> library(dslabs)
+> data(murders)
+> sort(murders$total)
+ [1]    2    4    5    5    7    8   11   12   12   16   19   21   22   27   32   36
+[17]   38   53   63   65   67   84   93   93   97   97   99  111  116  118  120  135
+[33]  142  207  219  232  246  250  286  293  310  321  351  364  376  413  457  517
+[49]  669  805 1257
+> #The function 'order' takes the vector and returns the indices that sort the vector parameters.
+> x<-c(12,8, 11, 76, 56)
+> x
+[1] 12  8 11 76 56
+> sort(x)
+[1]  8 11 12 56 76
+> index<-order(x)
+> x[index]
+[1]  8 11 12 56 76
+> x
+[1] 12  8 11 76 56
+> order(x)
+[1] 2 3 1 5 4
+> murders$state[1:10]
+ [1] "Alabama"              "Alaska"               "Arizona"             
+ [4] "Arkansas"             "California"           "Colorado"            
+ [7] "Connecticut"          "Delaware"             "District of Columbia"
+[10] "Florida"             
+> murders$abb[1:10]
+ [1] "AL" "AK" "AZ" "AR" "CA" "CO" "CT" "DE" "DC" "FL"
+> index<-order(murders$total)
+> murders$abb[index]
+ [1] "VT" "ND" "NH" "WY" "HI" "SD" "ME" "ID" "MT" "RI" "AK" "IA" "UT" "WV" "NE" "OR"
+[17] "DE" "MN" "KS" "CO" "NM" "NV" "AR" "WA" "CT" "WI" "DC" "OK" "KY" "MA" "MS" "AL"
+[33] "IN" "SC" "TN" "AZ" "NJ" "VA" "NC" "MD" "OH" "MO" "LA" "IL" "GA" "MI" "PA" "NY"
+[49] "FL" "TX" "CA"
+> #MORE FASTER METHOD TO GET MAXIMUM VALUE
+> max(murders$total)
+[1] 1257
+> i_max<-which.max(murders$total)
+> i_max
+[1] 5
+> murders$state[i_max]
+[1] "California"
+> x
+[1] 12  8 11 76 56
+> rank(x)
+[1] 3 1 2 5 4
