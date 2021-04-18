@@ -1,0 +1,22 @@
+ #UNDERSTANDING VECTOR COERCION
+> #Coercion is an attempt by R in order to flexible with data types
+> #When entries does not met the expected R tries to guess before throwing an error.
+> x<-c(11,"Akshansh",18)
+> x
+[1] "11"       "Akshansh" "18"      
+> class(x)
+[1] "character"
+> #The numbers into charatcers can be converted by 'as.character' function.
+> x<-1:5
+> y<-as.character(x)
+> y
+[1] "1" "2" "3" "4" "5"
+> #It can be converted again to numeric by 'as.numeric' function.
+> as.numeric(y)
+[1] 1 2 3 4 5
+> #Missing data is common in practice. 'NA' defines the missing data.
+> x<-c("1","b","3")
+> as.numeric(x)
+[1]  1 NA  3
+Warning message:
+NAs introduced by coercion 
