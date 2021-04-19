@@ -1,0 +1,14 @@
+> #DATA FRAMES
+> grades<-data.frame(names=c("Akshansh","Upendra","Priyanshu","Komal"),exam_1=c(91,92,95,93),exam_2=c(95,89,92,94))
+> grades
+      names exam_1 exam_2
+1  Akshansh     91     95
+2   Upendra     92     89
+3 Priyanshu     95     92
+4     Komal     93     94
+> class(grades$names)
+[1] "character"
+> #In order to make it character
+> grades<-data.frame(names=c("Akshansh","Upendra","Priyanshu","Komal"),exam_1=c(91,92,95,93),exam_2=c(95,89,92,94),stringsAsFactors=FALSE)
+> class(grades$names)
+[1] "character"
