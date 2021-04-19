@@ -1,0 +1,22 @@
+ #INDEXING FUNCTIONS
+> #There are three important indexing functions 'which', 'match', '%in%'
+> #'which' gives us the entries of the logical vectors which are true.
+> x<-c(FALSE, TRUE, FALSE, TRUE, TRUE, FALSE)
+> which(x)
+[1] 2 4 5
+> #'which' functions returns the indices value of x which are true
+> #'match' looks for entries in a vector aand returns the index needed to access them.
+> #Suppose instead of one state we need to find out the murder rate of many states.
+> index<-match(c("New York","Florida", "Texas")murders$state)
+Error: unexpected symbol in "index<-match(c("New York","Florida", "Texas")murders"
+> index<-match(c("New York","Florida", "Texas"),murders$state)
+> index
+[1] 33 10 44
+> #Cross checking
+> murder_state[index]
+Error: object 'murder_state' not found
+> #'%in%' function is used to find out the common elements present in both vector spaces.
+> x<-c("a","b","c","d","e")
+> y<-c("a","d","f")
+> y%in%x
+[1]  TRUE  TRUE FALSE
