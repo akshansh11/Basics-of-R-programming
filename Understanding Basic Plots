@@ -1,0 +1,11 @@
+#BASICS PLOTS
+> #Scatter Plot
+> population_in_millions<-murders$population/10^6
+> total_gun_murders<-murders#
+> 
+> total_gun_murders<-murders$total
+> plot(population_in_millions,total_gun_murders)
+> #HISTOGRAM
+> hist(murders$rate)
+> #BOXPLOT
+> boxplot(rate~region,data=murders)
