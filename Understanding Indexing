@@ -1,0 +1,22 @@
+> #INDEXING
+> murder_rate<-murders$total/murders$population*100000
+> index<-murder_rate<0.71
+> index<-murder_rate<=0.71
+> index
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+[14] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[27] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[40] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+> murders$state[index]
+[1] "Hawaii"        "Iowa"          "New Hampshire" "North Dakota"  "Vermont"      
+> #In order to find out the number of state having murder rate <0.71, we can use 'sum' function
+> sum(index)
+[1] 5
+> 
+> #Now suppose, if any one wants to move to the west region and he/she wants the region to be safe.
+> west<-murders$region=="West"
+> safe<-murder_rate<=1
+> #We can use AND operator to find out which state satisfies the both condition.
+> index<-safe&west
+> murders$state[index]
+[1] "Hawaii"  "Idaho"   "Oregon"  "Utah"    "Wyoming"
