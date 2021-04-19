@@ -1,0 +1,64 @@
+#BASICS DATA WRANGLING
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+package ‘dplyr’ was built under R version 4.0.5 
+> #'mutate' function is used to add new column to the existing dataset.
+> muders<-mutate(murders,rate=total/population*100000)
+> #In order to see the modified dataset use 'head' function.
+> head(murders)
+       state abb region population total
+1    Alabama  AL  South    4779736   135
+2     Alaska  AK   West     710231    19
+3    Arizona  AZ   West    6392017   232
+4   Arkansas  AR  South    2915918    93
+5 California  CA   West   37253956  1257
+6   Colorado  CO   West    5029196    65
+> murders<-mutate(murders,rate=total/population*100000)
+> head(murders)
+       state abb region population total     rate
+1    Alabama  AL  South    4779736   135 2.824424
+2     Alaska  AK   West     710231    19 2.675186
+3    Arizona  AZ   West    6392017   232 3.629527
+4   Arkansas  AR  South    2915918    93 3.189390
+5 California  CA   West   37253956  1257 3.374138
+6   Colorado  CO   West    5029196    65 1.292453
+> filters(murders,rate<=0.71)
+Error in filters(murders, rate <= 0.71) : 
+  could not find function "filters"
+> filter(murders,rate<=0.71)
+          state abb        region population total      rate
+1        Hawaii  HI          West    1360301     7 0.5145920
+2          Iowa  IA North Central    3046355    21 0.6893484
+3 New Hampshire  NH     Northeast    1316470     5 0.3798036
+4  North Dakota  ND North Central     672591     4 0.5947151
+5       Vermont  VT     Northeast     625741     2 0.3196211
+> 
+> #'select' function is just used to select the columns you want to work with.
+> new_table<-select(murders,state,region,rate)
+> filter(new_table,rate<=0.71)
+          state        region      rate
+1        Hawaii          West 0.5145920
+2          Iowa North Central 0.6893484
+3 New Hampshire     Northeast 0.3798036
+4  North Dakota North Central 0.5947151
+5       Vermont     Northeast 0.3196211
+> 
+> #Pipe operation '%>%' . Data->Select->Filter
+> murders%>%select(state,region,rate)%>%filter(rate<=0.71)
+          state        region      rate
+1        Hawaii          West 0.5145920
+2          Iowa North Central 0.6893484
+3 New Hampshire     Northeast 0.3798036
+4  North Dakota North Central 0.5947151
+5       Vermont     Northeast 0.3196211
